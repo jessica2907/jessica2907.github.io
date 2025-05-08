@@ -45,10 +45,20 @@ function create() {
 }
 
 function update() {
-  if (Phaser.Math.Distance.Between(visitor.x, visitor.y, this.input.activePointer.x, this.input.activePointer.y) < 5) {
+  // Stop the visitor when close to destination
+  const pointer = this.input.activePointer;
+  if (Phaser.Math.Distance.Between(visitor.x, visitor.y, pointer.x, pointer.y) < 5) {
     visitor.body.setVelocity(0);
   }
+
+  // Stop the player when close to the visitor
+  if (Phaser.Math.Distance.Between(player.x, player.y, visitor.x, visitor.y) < 10) {
+    player.body.setVelocity(0);
+  } else {
+    this.physics.moveToObject(player, visitor, 100);
+  }
 }
+
 
 function showDialog(text) {
   const dialog = document.createElement("div");
