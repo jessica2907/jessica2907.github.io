@@ -29,7 +29,7 @@ function preload() {
 function create() {
   this.add.tileSprite(0, 0, config.width, config.height, 'floor').setOrigin(0, 0);
 
-  player = this.physics.add.sprite(100, 100, 'player');
+  player = this.physics.add.image(100, 100, 'player'); // use `add.image`, not `add.sprite`
   visitor = this.physics.add.sprite(300, 100, 'visitor');
 
   this.input.on('pointerdown', (pointer) => {
