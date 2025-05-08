@@ -52,7 +52,7 @@ function update() {
   }
 
   // Stop the player when close to the visitor
-  if (Phaser.Math.Distance.Between(player.x, player.y, visitor.x, visitor.y) < 10) {
+  if (Phaser.Math.Distance.Between(player.x, player.y, visitor.x, visitor.y) < 80) {
     player.body.setVelocity(0);
   } else {
     this.physics.moveToObject(player, visitor, 100);
