@@ -23,14 +23,16 @@ function preload() {
   this.load.image('floor', 'assets/floor.png');
   this.load.image('book', 'assets/book.png');
   this.load.image('player', 'assets/player.png');
-  this.load.spritesheet('visitor', 'assets/visitor.png', { frameWidth: 32, frameHeight: 32 });
+  //this.load.spritesheet('visitor', 'assets/visitor.png', { frameWidth: 32, frameHeight: 32 });
+  this.load.image('visitor', 'assets/visitor.png');
 }
 
 function create() {
   this.add.tileSprite(0, 0, config.width, config.height, 'floor').setOrigin(0, 0);
 
   player = this.physics.add.image(100, 100, 'player');
-  visitor = this.physics.add.sprite(300, 100, 'visitor');
+  //visitor = this.physics.add.sprite(300, 100, 'visitor');
+  player = this.physics.add.image(100, 100, 'visitor');
 
   this.input.on('pointerdown', (pointer) => {
     const destination = pointer;
