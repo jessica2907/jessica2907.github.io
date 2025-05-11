@@ -32,7 +32,7 @@ function create() {
 
   player = this.physics.add.image(100, 100, 'player');
   //visitor = this.physics.add.sprite(300, 100, 'visitor');
-  player = this.physics.add.image(100, 100, 'visitor');
+  visitor = this.physics.add.image(100, 100, 'visitor').setScale(5);;
 
   this.input.on('pointerdown', (pointer) => {
     const destination = pointer;
